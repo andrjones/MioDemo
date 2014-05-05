@@ -7,6 +7,16 @@ mioDemoApp.config(['$routeProvider', '$locationProvider', function($routeProvide
             templateUrl: 'partials/newSnippet.html',
             controller: 'createSnippetController'
         });
+    $routeProvider.when('/snippets',
+        {
+            templateUrl: 'partials/snippetList.html',
+            controller: 'snippetListController'
+        });
+    $routeProvider.when('/snippet/:snippetId',
+        {
+            templateUrl: 'partials/snippet.html',
+            controller: 'snippetController'
+        });
 
     // default url when requesting root (/)
     $routeProvider.otherwise({redirectTo: '/newSnippet'});
