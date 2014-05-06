@@ -3,8 +3,7 @@
     <hr />
     <ul class="thumbnails">
         <li ng-repeat="snippet in snippets">
-            <snippet-thumbnail snippet="snippet" loadSnippet="loadSnippet(snippet)"
-                               languageName="{{getLanguageNameFromId(snippet.languageId)}}" />
+            <snippet-thumbnail snippet="snippet" />
         </li>
     </ul>
 </div>
