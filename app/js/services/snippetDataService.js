@@ -8,23 +8,28 @@ mioDemoApp.factory('snippetDataService', function($resource) {
     };
 
     var save = function(snippet) {
-        snippet.id = getNextSnippetId();
-        return resource.save(snippet);
+        resource.query(function(data) {
+            snippet.id = getNextSnippetId(data);
+            return resource.save(snippet);
+        });
     };
 
     var all = function() {
         return resource.query();
     };
 
-    var getNextSnippetId = function() {
-        var snippets = all();
+    var getNextSnippetId = function(snippets) {
         var max = 0;
-        for (var i = 0; i < snippets.length; i++) {
-            if (snippets[i].id > max) {
-                max = snippets[i].id;
+
+        if (snippets) {
+            for (var i = 0; i < snippets.length; i++) {
+                if (snippets[i].id > max) {
+                    max = snippets[i].id;
+                }
             }
         }
-        return max+1;
+
+        return (max + 1);
     }
 
     return {
