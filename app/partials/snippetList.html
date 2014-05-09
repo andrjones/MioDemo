@@ -1,9 +1,12 @@
-<div>
-    <h1>Code Snippets</h1>
-    <hr />
-    <ul class="thumbnails">
-        <li ng-repeat="snippet in snippets">
-            <snippet-thumbnail snippet="snippet" />
-        </li>
-    </ul>
+<h1>Code Snippets</h1>
+<hr />
+Filter:
+<select ng-model="langfilter" class="input-medium"
+        ng-options="language.id as language.name for language in languages">
+    <option value=""></option>
+</select>
+<br /><br />
+
+<div ng-repeat="snippet in snippets | filter:langfilter" >
+    <snippet-thumbnail snippet="snippet" />
 </div>
