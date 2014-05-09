@@ -1,7 +1,7 @@
-<div class="well">
+<div class="well" ng-cloak>
     <div class="row"><h2 class="col-md-6">{{snippet.title}}</h2></div>
     <div class="row"><span class="col-md-2">Author:</span> <span>{{snippet.name}}</span></div>
     <div class="row"><span class="col-md-2">Language:</span> <span>{{languageName(snippet.languageId)}}</span></div>
     <div class="row"><span class="col-md-2">Description:</span><span>{{snippet.description}}</span></div>
-    <div class="row"><span class="col-md-2">Code:</span><pre><code syntax-highlight>{{snippet.code}}</code></pre></div>
+    <div class="row"><span class="col-md-2">Code:</span><syntax ng-bind="snippet.code"></syntax></div>
 </div>
