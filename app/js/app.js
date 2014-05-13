@@ -5,17 +5,17 @@ var mioDemoApp = angular.module('mioDemoApp', ['ngRoute', 'ngResource']);
 mioDemoApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.when('/newSnippet',
         {
-            templateUrl: 'partials/newSnippet.html',
+            templateUrl: '/partials/newSnippet.html',
             controller: 'createSnippetController'
         });
     $routeProvider.when('/snippets',
         {
-            templateUrl: 'partials/snippetList.html',
+            templateUrl: '/partials/snippetList.html',
             controller: 'snippetListController'
         });
     $routeProvider.when('/snippet/:snippetId',
         {
-            templateUrl: 'partials/snippet.html',
+            templateUrl: '/partials/snippet.html',
             controller: 'snippetController'
         });
 
