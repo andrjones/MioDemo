@@ -8,5 +8,5 @@ Filter:
 <br /><br />
 
 <div ng-repeat="snippet in snippets | filter:langfilter" >
-    <snippet-thumbnail snippet="snippet" />
+    <snippet-thumbnail snippet="snippet" show-details="redirectToSnippet(snippet)" />
 </div>

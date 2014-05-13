@@ -6,7 +6,8 @@ mioDemoApp.directive('snippetThumbnail', function() {
         replace: true,
         templateUrl: 'partials/directives/snippetThumbnail.html',
         scope: {
-            snippet: '='
+            snippet: '=',
+            showDetails: '&'
         },
         controller: function($scope, supportedLanguages) {
             $scope.languageName = function(languageId) {
