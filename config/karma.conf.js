@@ -66,6 +66,13 @@ module.exports = function(config) {
     browsers: ['Chrome'],
 
 
+    plugins: [
+        'karma-jasmine',
+        'karma-chrome-launcher',
+        'karma-ng-scenario'
+    ],
+
+      
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false
