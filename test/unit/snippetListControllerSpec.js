@@ -8,10 +8,10 @@ describe('snippetListController', function() {
     var mockLocationService;
 
     // load the module that contians the controller under test
-    beforeEach(angular.mock.module('mioDemoApp'));
+    beforeEach(module('mioDemoApp'));
 
     // inject is global in tests (comes from angular-mocks)
-    beforeEach(angular.mock.inject(function($controller, $rootScope) {
+    beforeEach(inject(function($controller, $rootScope) {
         // create a new scope object that can be used in controllers
         scope = $rootScope.new();
 
