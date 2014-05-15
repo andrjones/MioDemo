@@ -28,15 +28,17 @@ describe('snippetListController', function() {
 
     // stub service methods used in the controller
     beforeEach(function() {
-        mockSnippetDataService = sinon.stub({getAllSnippets: function() {}});
+        mockSnippetDataService = { getAllSnippets: sinon.stub() };
         mockLocationService = sinon.stub({url: function() {}});
     });
 
     it('should set the snippets property in scope to the result of snippetDataService.getAllSnippets', function() {
-        createController();
+
         var mockSnippets = {};
         mockSnippetDataService.getAllSnippets.returns(mockSnippets);
+        createController();
 
+        expect(mockSnippetDataService.getAllSnippets.calledOnce).toBe(true);
         expect(scope.snippets).toBe(mockSnippets);
     });
 
