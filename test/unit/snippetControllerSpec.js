@@ -21,7 +21,7 @@ describe('snippetListController', function() {
     // inject is global in tests (comes from angular-mocks)
     beforeEach(inject(function($controller, $rootScope) {
         // create a new scope object that can be used in controllers
-        scope = $rootScope.new();
+        scope = $rootScope.$new();
         // pass the controller service out so it can be used as a factory
         // for instantiating the controller under test
         controllerFactory = $controller;
@@ -38,6 +38,7 @@ describe('snippetListController', function() {
         var mockSnippet = {};
         mockSnippetDataService.getSnippet.withArgs(1).returns(mockSnippet);
 
+        expect(mockSnippetDataService.getSnippet.calledWith(1)).toBe(true);
         expect(scope.snippet).toBe(mockSnippet);
     });
 });
