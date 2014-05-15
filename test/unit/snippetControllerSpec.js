@@ -5,7 +5,7 @@ describe('snippetListController', function() {
     //var $controllerConstructor; // use $ to remind us that is will hold an angular object
     var scope;
     var mockSnippetDataService;
-    var mockLocationService;
+    var mockRouteParamsService;
 
     // load the module that contains the controller under test
     beforeEach(module('mioDemoApp'));
@@ -16,25 +16,18 @@ describe('snippetListController', function() {
         scope = $rootScope.new();
 
         // stub service methods used in the controller
-        mockSnippetDataService = sinon.stub({getAllSnippets: function() {}});
-        mockLocationService = sinon.stub({url: function() {}});
+        mockSnippetDataService = sinon.stub({getSnippet: function(snippetId) {}});
+        mockRouteParamsService = { snippetId: 1 };
 
         // $controller will allow you to construct (new up) a controller
-        $controller('snippetListController',
-            { $scope: scope, $location: mockLocationService, snippetDataService: mockSnippetDataService, supportedLanguages: {} });
+        $controller('snippetController',
+            { $scope: scope, $routeParams: mockRouteParamsService, snippetDataService: mockSnippetDataService });
     }));
 
     it('should set the snippets property in scope to the result of snippetDataService.getAllSnippets', function() {
-        var mockSnippets = {};
-        mockSnippetDataService.getAllSnippets.returns(mockSnippets);
+        var mockSnippet = {};
+        mockSnippetDataService.getSnippet.withArgs(1).returns(mockSnippet);
 
-        expect(scope.snippets).toBe(mockSnippets);
-    });
-
-    it('should redirect to the correct url when redirectToSnippet is called', function() {
-        var snippet = { id: 1 };
-        scope.redirectToSnippet(snippet);
-
-        expect(mockLocation.url.calledWith('/snippet/1')).toBe(true);
+        expect(scope.snippet).toBe(mockSnippet);
     });
 });
