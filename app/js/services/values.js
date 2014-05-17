@@ -18,7 +18,7 @@ angular.module('mioDemoApp').factory("supportedLanguages2", function() {
         { id: 3, name: 'Perl' },
         { id: 4, name: 'Scala' }
     ];
-})
+});
 
 // this service is not used in the application, it is here for demonstrating
 // testing simple (no dependencies) services
