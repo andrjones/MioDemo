@@ -1,6 +1,6 @@
 'use strict';
 
-mioDemoApp.value("supportedLanguages", [
+angular.module('mioDemoApp').value("supportedLanguages", [
     { id: 0, name: 'JavaScript' },
     { id: 1, name: 'C#' },
     { id: 2, name: 'Java' },

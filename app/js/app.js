@@ -1,8 +1,8 @@
 'use strict';
 
-var mioDemoApp = angular.module('mioDemoApp', ['ngRoute', 'ngResource']);
+angular.module('mioDemoApp', ['ngRoute', 'ngResource']);
 
-mioDemoApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+angular.module('mioDemoApp').config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.when('/newSnippet',
         {
             templateUrl: '/partials/newSnippet.html',

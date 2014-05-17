@@ -1,6 +1,6 @@
 'use strict';
 
-mioDemoApp.factory('snippetDataService', function($resource) {
+angular.module('mioDemoApp').factory('snippetDataService', function($resource) {
     var resource = $resource('/data/snippet/:id', {id:'@id'});
 
     var get = function(snippetId) {

@@ -1,6 +1,6 @@
 'use strict'
 
-mioDemoApp.directive('snippetThumbnail', function() {
+angular.module('mioDemoApp').directive('snippetThumbnail', function() {
     return {
         restrict: 'E',
         replace: true,
