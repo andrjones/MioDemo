@@ -5,14 +5,14 @@ describe('values', function() {
     // load the module that contains the controller under test
     beforeEach(module('mioDemoApp'));
 
-    it('getLanguages should return an empty array when no langauge matches the pattern',
+    it('getLanguages should return an empty array when no language matches the pattern',
         inject(function(supportedLanguages3) {
             var pattern = "xyz";
             var result = supportedLanguages3.findLanguage(pattern);
             expect(result.length).toBe(0);
     }));
 
-    it('getLanguages should return an array with one language when exactly one langauge matches the pattern',
+    it('getLanguages should return an array with one language when exactly one language matches the pattern',
         inject(function(supportedLanguages3) {
             var pattern = "^P.+";
             var expected = [ {id: 3, name: 'Perl'} ];
@@ -23,7 +23,7 @@ describe('values', function() {
             }
         }));
 
-    it('getLanguages should return an array of languages when multiple langauges matches the pattern',
+    it('getLanguages should return an array of languages when multiple languages matches the pattern',
         inject(function(supportedLanguages3) {
             var pattern = "^Ja.+";
             var expected = [ {id: 0, name: 'JavaScript'}, {id: 2, name: 'Java'}];

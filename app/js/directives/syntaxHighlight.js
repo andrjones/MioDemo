@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mioDemoApp').directive('syntax', function($timeout) {
+angular.module('mioDemoApp').directive('mioSyntax', function($timeout) {
     return {
         restrict: 'E',
         replace: true,

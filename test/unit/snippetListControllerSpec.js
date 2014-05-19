@@ -18,11 +18,9 @@ describe('snippetListController', function() {
     // load the module that contains the controller under test
     beforeEach(module('mioDemoApp'));
 
-    beforeEach(inject(function($controller, $rootScope) {
-        // create a new scope object that can be used in controllers
+    // get a controller constructor and a scope object
+    beforeEach(inject(function($controller, $rootScope) {s
         scope = $rootScope.$new();
-        // pass the controller service out so it can be used as a factory
-        // for instantiating the controller under test
         controllerFactory = $controller;
     }));
 
