@@ -19,7 +19,7 @@ describe('snippetListController', function() {
     beforeEach(module('mioDemoApp'));
 
     // get a controller constructor and a scope object
-    beforeEach(inject(function($controller, $rootScope) {s
+    beforeEach(inject(function($controller, $rootScope) {
         scope = $rootScope.$new();
         controllerFactory = $controller;
     }));

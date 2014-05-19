@@ -30,7 +30,7 @@ angular.module('mioDemoApp').factory('snippetDataService', function($resource) {
         }
 
         return (max + 1);
-    }
+    };
 
     return {
         getSnippet: get,

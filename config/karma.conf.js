@@ -21,7 +21,8 @@ module.exports = function(config) {
         '../test/lib/angular-mocks.js',
         '../test/lib/sinon-1.9.1.js',
         'js/**/*.js',
-        '../test/unit/**/*.js'
+        '../test/unit/**/*.js',
+        'partials/directives/*.html'
     ],
 
 
@@ -34,7 +35,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-    
+        '**/*.html':['ng-html2js']
     },
 
 
@@ -69,7 +70,8 @@ module.exports = function(config) {
     plugins: [
         'karma-jasmine',
         'karma-chrome-launcher',
-        'karma-ng-scenario'
+        'karma-ng-scenario',
+        'karma-ng-html2js-preprocessor'
     ],
 
 
