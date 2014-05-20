@@ -3,5 +3,5 @@
     <div class="row"><span class="col-md-2">Author:</span> <span ng-bind="snippet.name"></span></div>
     <div class="row"><span class="col-md-2">Language:</span> <span ng-bind="languageName(snippet.languageId)"></span></div>
     <div class="row"><span class="col-md-2">Description:</span><span ng-bind="snippet.description"></span></div>
-    <div class="row"><span class="col-md-2">Code:</span><mio-syntax ng-bind="snippet.code" /></div>
+    <div class="row"><span class="col-md-2">Code:</span><mio-syntax code="snippet.code"></mio-syntax></div>
 </div>
