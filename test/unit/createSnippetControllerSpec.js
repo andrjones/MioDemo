@@ -5,7 +5,6 @@ describe('createSnippetController', function() {
     var scope;
     var controllerFactory;
     var mockSnippetDataService;
-    var mockRouteParamsService;
 
     var createController = function() {
         return controllerFactory('createSnippetController', {

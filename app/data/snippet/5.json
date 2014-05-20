@@ -1,0 +1,1 @@
+{"name":"Andrew Jones","title":"Object literal","description":"How to define an object literal in JavaScript","languageId":0,"code":"var obj = {\n    name: \"sample\",\n    multiplier: 1.6,\n    space: 0.9,\n    value: function() {\n        return space * multiplier;\n    }\n};","id":5}

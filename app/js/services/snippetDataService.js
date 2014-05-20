@@ -7,10 +7,14 @@ angular.module('mioDemoApp').factory('snippetDataService', function($resource) {
         return resource.get({id:snippetId});
     };
 
-    var save = function(snippet) {
+    var save = function(snippet, callback) {
+        if (typeof callback === 'undefined') {
+            callback = function() {};
+        }
+
         resource.query(function(data) {
             snippet.id = getNextSnippetId(data);
-            return resource.save(snippet);
+            resource.save(snippet, callback);
         });
     };
 

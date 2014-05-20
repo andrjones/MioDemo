@@ -6,7 +6,10 @@ angular.module('mioDemoApp').controller('createSnippetController',
         $scope.languages = supportedLanguages;
         $scope.saveSnippet = function(snippet, newSnippetForm) {
             if (newSnippetForm.$valid) {
-                snippetDataService.saveSnippet(snippet);
+                snippetDataService.saveSnippet(snippet, function() {
+                    $scope.newSnippetForm.$setPristine();
+                    $scope.snippet = {};
+                });
             }
         };
     }
