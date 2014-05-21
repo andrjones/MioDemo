@@ -18,6 +18,7 @@ module.exports = function(config) {
         'lib/jquery-1.11.0.min.js',
         'lib/angular.min.js',
         'lib/angular-*.js',
+        'lib/highlight.pack.js',
         '../test/lib/angular-mocks.js',
         '../test/lib/sinon-1.9.1.js',
         'js/**/*.js',
