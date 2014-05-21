@@ -3,11 +3,15 @@
 angular.module('mioDemoApp').directive('mioSyntax', function() {
     return {
         restrict: 'E',
+
         replace: true,
+
         template: '<pre><code>{{code}}</code></pre>',
+
         scope: {
             code: '='
         },
+
         link: function(scope, element) {
 
             var watchExpression = function() {

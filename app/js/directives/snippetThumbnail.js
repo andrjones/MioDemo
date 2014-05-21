@@ -3,12 +3,16 @@
 angular.module('mioDemoApp').directive('mioSnippetThumbnail', function() {
     return {
         restrict: 'E',
+
         replace: true,
+
         templateUrl: 'partials/directives/snippetThumbnail.html',
+
         scope: {
             snippet: '=',
             showDetails: '&'
         },
+
         controller: function($scope, supportedLanguages) {
             $scope.languageName = function(languageId) {
                 for (var i = 0; i < supportedLanguages.length; i++) {
