@@ -4,7 +4,7 @@ describe('snippetThumbnail', function() {
     var element;
     var mockShowDetails;
 
-    // load the module that contains the controller under test
+    // load the module that contains the directive under test
     beforeEach(module('mioDemoApp'));
 
     // load the directive template being rendered for test

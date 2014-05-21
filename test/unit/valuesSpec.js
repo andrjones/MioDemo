@@ -2,7 +2,7 @@
 
 describe('values', function() {
 
-    // load the module that contains the controller under test
+    // load the module that contains the service under test
     beforeEach(module('mioDemoApp'));
 
     it('getLanguages should return an empty array when no language matches the pattern',
